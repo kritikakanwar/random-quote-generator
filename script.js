@@ -16,8 +16,12 @@ function loading()
 // hide loading
 function complete()
 {
-    quotecontainer.hidden=false;
-    loader.hidden=true;
+    if(!loader.hidden)
+    {
+
+        quotecontainer.hidden=false;
+        loader.hidden=true;
+    }
 }
 // new quote
 function newquote()
@@ -33,8 +37,7 @@ if(quote.author==null)
 }
 else
 {
-
-    quoteauthor.textContent=quote.author;
+quoteauthor.textContent=quote.author;
 }
 // check quote length to determine styling
 if(quote.text.length>50)
